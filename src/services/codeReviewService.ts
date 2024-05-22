@@ -70,8 +70,7 @@ b.Use appropriate HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
 a.Use @ControllerAdvice for global exception handling.
 b.Customize error responses using @ExceptionHandler.
 5.Security:
-a.Implement security features such as authentication and authorization using Spring Security.
-b.Use best practices like password hashing and session management.
+a.Use best practices like password hashing and session management.
 6.Testing:
 a.Write unit tests for business logic using frameworks like JUnit and Mockito.
 b.Use Spring Boot's testing annotations (@SpringBootTest, @WebMvcTest, etc.) for integration testing.
