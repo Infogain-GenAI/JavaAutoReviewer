@@ -29,11 +29,11 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities.
-    Check it adheres to the following design patterns and coding guidelines for both Java and Springboot.
+    Check it adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
    -Design Patterns:
-1.Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate.
+1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate.
 2. If not used, suggest the appropriate design pattern to improve the code.
-3. Check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).
+3. Also, check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).
     -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
