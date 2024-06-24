@@ -30,7 +30,7 @@ export class CodeReviewServiceImpl {
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities.
     Check it adheres to the following coding standards and guidelines for both Java and Springboot.
-    In addition to the coding standards and guidelines, also verify that the code adheres to the design patterns given below.
+    In addition to the coding standards and guidelines, also verify that the code adheres to the design patterns and suggest code improvements accordingly.
     -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
@@ -88,13 +88,9 @@ b.Include clear descriptions, request/response examples, and error handling deta
 10.External Configurations:
 a.Externalize configuration using application properties or YAML files.
 b.Avoid hardcoding environment-specific values.
--Design Patterns:
-1.Creational Patterns:
-a. Singleton - Ensure that a class has only one instance and provides a global point of access to it.
-b. Factory - Ensure to Create objects without specifying the exact class of object that will be created.
-c. Abstract Factory - Ensure to Create families of related or dependent objects.
-d. Builder - Ensure to Separate the construction of a complex object from its representation.
-
+11. Design Patterns:
+a.Apply design patterns like Singleton, Factory, Builder, Strategy, etc., where appropriate.
+b.Follow SOLID principles for better code design and maintainability.
 
 Write your reply and examples in GitHub Markdown format.
 The programming language in the git diff is {lang}.
