@@ -29,7 +29,7 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities.
-    Check it adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
+    Verify that the code adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
    -Design Patterns:
 1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate.
 2. If not used, suggest the appropriate design pattern to improve the code.
@@ -44,19 +44,19 @@ a.Use 4 spaces for indentation.
 b.Use braces even for single-line statements in control structures.
 c.Limit lines to 80-120 characters to improve readability.
 3.Comments and Documentation:
-a.Use Javadoc style comments for documenting classes, methods, and fields.
+a.Verify that the Javadoc style comments are used for documenting classes, methods, and fields.
 b.Write clear and concise comments to explain complex algorithms or business logic.
 4.Exception Handling:
 a.Use specific exception types rather than catching Exception.
 b.Handle exceptions appropriately, either by logging or throwing further up the call stack.
 5.Avoid Magic Numbers and Strings:
-a.Use constants instead of hardcoding values.
-b.Define strings and numbers as constants at the beginning of the class.
+a.Verify constants are used instead of hardcoding values.
+b.Verify that strings and numbers are defined as constants at the beginning of the class.
 6.Immutable Objects:
 a.Prefer immutability whenever possible.
-b.Make fields final if they should not change after object creation.
+b. Verify to make fields final if they should not change after object creation.
 7.Use Interfaces and Abstract Classes:
-a.Use interfaces for defining contracts and abstract classes for code reuse.
+a.Verify the use of interfaces for defining contracts and abstract classes for code reuse.
 b.Prefer composition over inheritance.
 8.Concurrency:
 a.Use thread-safe classes and synchronization mechanisms when dealing with concurrent operations.
@@ -66,16 +66,16 @@ b.Utilize Java's concurrent utilities like ExecutorService and ConcurrentHashMap
 a.Organize classes into packages based on their functionality.
 b.Follow the standard Maven or Gradle project structure.
 2.Dependency Injection:
-a.Use constructor injection wherever possible for better testability and immutability.
+a.Verify the use of constructor injection wherever possible for better testability and immutability.
 b.Avoid field injection, prefer setter injection only when required.
 3.RESTful APIs:
-a.Follow RESTful principles for designing APIs.
-b.Use appropriate HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
+a. Verify the RESTful principles are followed for designing APIs.
+b. Validate the use of appropriate HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
 4.Exception Handling:
-a.Use @ControllerAdvice for global exception handling.
+a.Verify that @ControllerAdvice is used for global exception handling.
 b.Customize error responses using @ExceptionHandler.
 5.Security:
-a.Use best practices like password hashing and session management.
+a. Verify that the best practices for password hashing and session management are used.
 6.Testing:
 a.Write unit tests for business logic using frameworks like JUnit and Mockito.
 b.Use Spring Boot's testing annotations (@SpringBootTest, @WebMvcTest, etc.) for integration testing.
@@ -83,7 +83,7 @@ b.Use Spring Boot's testing annotations (@SpringBootTest, @WebMvcTest, etc.) for
 a.Use a logging framework like Log4j or Logback.
 b.Log meaningful messages with appropriate log levels.
 8.Performance:
-a.Optimize database queries using Spring Data JPA's query methods or custom queries.
+a.Verify that the database queries are optimized using Spring Data JPA's query methods or custom queries.
 b.Cache data using Spring's caching abstraction (@Cacheable, @CacheEvict).
 9.Documentation:
 a.Document API endpoints using Swagger or Spring REST Docs.
