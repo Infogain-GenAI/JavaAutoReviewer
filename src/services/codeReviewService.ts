@@ -24,13 +24,16 @@ export class CodeReviewServiceImpl {
   private llm: BaseChatModel
   private chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
-      "Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software architecture."
+      "Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software design and architecture."
     ),
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities.
-    Check it adheres to the following coding standards and guidelines for both Java and Springboot.
-    In addition to the coding standards and guidelines, also verify that the code adheres to the design patterns and suggest code improvements accordingly.
+    Check it adheres to the following design patterns and coding guidelines for both Java and Springboot.
+   -Design Patterns:
+1.Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate.
+2. If not used, suggest the appropriate design pattern to improve the code.
+3. Check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion).
     -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
@@ -88,9 +91,6 @@ b.Include clear descriptions, request/response examples, and error handling deta
 10.External Configurations:
 a.Externalize configuration using application properties or YAML files.
 b.Avoid hardcoding environment-specific values.
-11. Design Patterns:
-a.Apply design patterns like Singleton, Factory, Builder, Strategy, etc., where appropriate.
-b.Follow SOLID principles for better code design and maintainability.
 
 Write your reply and examples in GitHub Markdown format.
 The programming language in the git diff is {lang}.
