@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "ts-node",
+        "type": "node",
+        "request": "launch",
+        "args": ["./src/main.ts"],
+        "runtimeArgs": ["-r", "ts-node/register"],
+        "cwd": "${workspaceRoot}",
+        "internalConsoleOptions": "openOnSessionStart",
+        "env": {
+            "INPUT_github_token": "secret-token-123456",
+            "GITHUB_REPOSITORY": "Infogain-GenAI/JavaWebApplication",
+            "INPUT_model_name": "gpt-4o",
+            "INPUT_openai_api_key":"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",
+            "INPUT_temperature":"1.0"
+        }
+      }
+    ]
+  }
