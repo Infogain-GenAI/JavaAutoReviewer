@@ -10,10 +10,10 @@
         "cwd": "${workspaceRoot}",
         "internalConsoleOptions": "openOnSessionStart",
         "env": {
-            "INPUT_github_token": "secret-token-123456",
+            "INPUT_github_token": "",
             "GITHUB_REPOSITORY": "Infogain-GenAI/JavaWebApplication",
             "INPUT_model_name": "gpt-4o",
-            "INPUT_openai_api_key":"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",
+            "INPUT_openai_api_key":"",
             "INPUT_temperature":"1.0"
         }
       }
