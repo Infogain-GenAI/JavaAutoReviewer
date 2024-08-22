@@ -14,7 +14,7 @@ import { Effect, Layer, Match, pipe, Exit } from 'effect'
 config()
 
 export const run = async (): Promise<void> => {
-  const openAIApiKey = core.getInput('openai_api_key')
+  //const openAIApiKey = core.getInput('openai_api_key')
   const githubToken = core.getInput('github_token')
   const modelName = core.getInput('model_name')
   const temperature = parseInt(core.getInput('model_temperature'))
