@@ -32,7 +32,7 @@ export class CodeReviewServiceImpl {
     Verify that the code adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
    -Design Patterns:
 1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate. If not used, suggest how to refactor the code to follow the specific design pattern(s).
-2. Also, check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
+2. You have to Also, check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
     -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
