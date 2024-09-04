@@ -24,11 +24,28 @@ export class CodeReviewServiceImpl {
   private llm: BaseChatModel
   private chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
-      "Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software design and architecture."
+      `Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software design and architecture.
+      You are also an expert in sumarizing the review comments in the form of a predefined report for each and every coding guideline.`
     ),
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
-    Identify any potential bugs or security vulnerabilities.
+    Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
+    You can refer the following example for report summarization and provide the report against coding guidelines for each file in the git diff:
+    Example:  Code review checklist	Implemented
+Design Patterns	Yes
+SOLID principles	No
+Java Coding Guidelines:
+Naming Conventions	No
+Indentation and Formatting	No
+Comments and Documentation	Yes
+Include remaining points here from Java coding guidelines
+Springboot Coding Guidelines:
+Project Structure:	Yes
+Dependency Injection	Yes
+RESTful APIs	No
+Exception Handling	No
+Include remaining points here from Spring boot coding guidelines
+
     Verify that the code adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
    -Design Patterns:
 1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate. If not used, suggest how to refactor the code to follow the specific design pattern(s).
