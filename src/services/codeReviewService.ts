@@ -30,7 +30,7 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
-    You can refer the following example for report summarization and provide the report against coding guidelines for each file in the git diff:
+    You can refer the following example for a report summarization and provide the report in a tabular format against coding guidelines for each file in the git diff:
     Example:  Code review checklist	Implemented
 Design Patterns	Yes
 SOLID principles	No
