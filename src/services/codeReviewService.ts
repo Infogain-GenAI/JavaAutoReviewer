@@ -24,7 +24,7 @@ export class CodeReviewServiceImpl {
   private llm: BaseChatModel
   private chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
-      `Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software design and architecture.
+      `Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java, Springboot framwork and AppDynamics Integration, and adhering to best practices of software design and architecture.
       You are also an expert in sumarizing the review comments in the form of a predefined report for each and every coding guideline.`
     ),
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
@@ -46,10 +46,9 @@ RESTful APIs	No
 Exception Handling	No
 Include remaining points here from Spring boot coding guidelines
 
-    Verify that the code adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
+    Verify that the code adheres to the following design patterns and coding guidelines for Java, Springboot and AppDynamics Integration, and suggest code improvements accordingly.
    -Design Patterns:
-1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate. If not used, suggest how to refactor the code to follow the specific design pattern(s).
-2. You have to Also, check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
+1. You have to check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
     -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
@@ -107,6 +106,9 @@ b.Include clear descriptions, request/response examples, and error handling deta
 10.External Configurations:
 a.Externalize configuration using application properties or YAML files.
 b.Avoid hardcoding environment-specific values.
+- AppDynamics Integration Coding Guidelines:
+a.Configure the agent settings (appdynamics.agent.applicationName, appdynamics.agent.tierName, appdynamics.agent.plan, etc.) in the jenkins-spec.yml or as environment variables.
+b.Recommended name for appdynamics.agent.tierName should be the application name followed by  the application EAI number (example FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
 Write your reply and examples in GitHub Markdown format.
 The programming language in the git diff is {lang}.
