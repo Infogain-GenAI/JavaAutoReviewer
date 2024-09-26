@@ -104,7 +104,6 @@ b.Include clear descriptions, request/response examples, and error handling deta
 a.Externalize configuration using application properties or YAML files.
 b.Avoid hardcoding environment-specific values.
 - AppDynamics Integration (.yml) Coding Guidelines:
-Review the jenkin files as per the below guidelines only-
 a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined.
 b.Verify that the name for appdynamics.agent.tierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
