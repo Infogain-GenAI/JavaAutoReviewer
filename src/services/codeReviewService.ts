@@ -107,7 +107,7 @@ b.Include clear descriptions, request/response examples, and error handling deta
 a.Externalize configuration using application properties or YAML files.
 b.Avoid hardcoding environment-specific values.
 - AppDynamics Integration Coding Guidelines:
-a.Configure the agent settings (appdynamics.agent.applicationName, appdynamics.agent.tierName, appdynamics.agent.plan, etc.) in the jenkins-spec.yml or as environment variables.
+a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined in the jenkins specifications file.
 b.Recommended name for appdynamics.agent.tierName should be the application name followed by  the application EAI number (example FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
 Write your reply and examples in GitHub Markdown format.
