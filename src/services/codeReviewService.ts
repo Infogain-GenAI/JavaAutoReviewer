@@ -101,7 +101,7 @@ b.Cache data using Spring's caching abstraction (@Cacheable, @CacheEvict).
 8.Documentation:
 a.Document API endpoints using Swagger or Spring REST Docs.
 b.Include clear descriptions, request/response examples, and error handling details.
-- AppDynamics Integration (.yml) Coding Guidelines:
+- AppDynamics Integration (.yml and .txt) Coding Guidelines:
 a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined.
 b.Verify that the name for appdAgentTierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
