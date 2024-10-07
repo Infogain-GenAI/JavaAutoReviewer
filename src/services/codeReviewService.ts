@@ -30,21 +30,22 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
-    You can refer the following example for a summary report having columns - Code Review checklist, Implemented and Summarization.
+    You can refer the following example for a summary report having columns - Code Review checklist, Summarization and Rating (between 1-5).
     For the Summarization column, add a note on the overall coverage of the respective guideline in the given file.
+    For the Rating column, assign a number between 1-5 based on the coverage of the guideline in the given file.
     Also, provide the report in a tabular format against coding guidelines, at the end of each file in the git diff:
-    Example:  Code review checklist	Implemented Summarization
-SOLID principles	No
+    Example:  Code review checklist	Summarization Rating(1-5)
+SOLID principles
 Java Coding Guidelines:
-Naming Conventions	No
-Indentation and Formatting	No
-Comments and Documentation	Yes
+Naming Conventions
+Indentation and Formatting
+Comments and Documentation
 Include remaining points here from Java coding guidelines
 Springboot Coding Guidelines:
-Project Structure:	Yes
-Dependency Injection	Yes
-RESTful APIs	No
-Exception Handling	No
+Project Structure:
+Dependency Injection
+RESTful APIs
+Exception Handling
 Include remaining points here from Spring boot coding guidelines
 
 Verify that the code adheres to the following design patterns and coding guidelines for Java, Springboot and AppDynamics Integration (.yml), and suggest code improvements accordingly.
@@ -101,7 +102,7 @@ b.Cache data using Spring's caching abstraction (@Cacheable, @CacheEvict).
 8.Documentation:
 a.Document API endpoints using Swagger or Spring REST Docs.
 b.Include clear descriptions, request/response examples, and error handling details.
-- AppDynamics Integration (.yml and .txt) Coding Guidelines:
+- AppDynamics Integration (.yml) Coding Guidelines:
 a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined.
 b.Verify that the name for appdAgentTierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
