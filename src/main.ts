@@ -14,24 +14,22 @@ import { Effect, Layer, Match, pipe, Exit } from 'effect'
 config()
 
 export const run = async (): Promise<void> => {
-  //const openAIApiKey = core.getInput('openai_api_key')
+  const openAIApiKey = core.getInput('openai_api_key')
   const githubToken = core.getInput('github_token')
   const modelName = core.getInput('model_name')
   const temperature = parseInt(core.getInput('model_temperature'))
-  const azureOpenAIApiKey = core.getInput('azure_openai_api_key')
-  const azureOpenAIApiInstanceName = core.getInput('azure_openai_api_instance_name')
-  const azureOpenAIApiDeploymentName = core.getInput('azure_openai_api_deployment_name')
-  const azureOpenAIApiVersion = core.getInput('azure_openai_api_version')
+  // const azureOpenAIApiKey = core.getInput('azure_openai_api_key')
+  // const azureOpenAIApiInstanceName = core.getInput('azure_openai_api_instance_name')
+  // const azureOpenAIApiDeploymentName = core.getInput('azure_openai_api_deployment_name')
+  // const azureOpenAIApiVersion = core.getInput('azure_openai_api_version')
 
   const context = github.context
   const { owner, repo } = context.repo
 
   const model: BaseChatModel = new ChatOpenAI({
     temperature,
-    azureOpenAIApiKey,
-    azureOpenAIApiInstanceName,
-    azureOpenAIApiDeploymentName,
-    azureOpenAIApiVersion
+    openAIApiKey,
+    modelName
   })
 
   const MainLive = initializeServices(model, githubToken)

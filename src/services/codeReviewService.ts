@@ -30,9 +30,10 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
-    You can refer the following example for a report summarization and provide the report in a tabular format against coding guidelines, at the end of each file in the git diff:
-    Example:  Code review checklist	Implemented
-Design Patterns	Yes
+    You can refer the following example for a summary report having columns - Code Review checklist, Implemented and Summarization.
+    For the Summarization column, add a note on the overall coverage of the respective guideline in the given file.
+    Also, provide the report in a tabular format against coding guidelines, at the end of each file in the git diff:
+    Example:  Code review checklist	Implemented Summarization
 SOLID principles	No
 Java Coding Guidelines:
 Naming Conventions	No
@@ -102,7 +103,7 @@ a.Document API endpoints using Swagger or Spring REST Docs.
 b.Include clear descriptions, request/response examples, and error handling details.
 - AppDynamics Integration (.yml) Coding Guidelines:
 a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined.
-b.Verify that the name for appdynamics.agent.tierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
+b.Verify that the name for appdAgentTierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
 
 Write your reply and examples in GitHub Markdown format.
 The programming language in the git diff is {lang}.
