@@ -30,11 +30,10 @@ export class CodeReviewServiceImpl {
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
     Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
-    You can refer the following example for a summary report having columns - Code Review checklist, Summarization and Rating (between 1-5).
+    You can refer the following example for a summary report having columns - Code Review checklist and Summarization.
     For the Summarization column, add a note on the overall coverage of the respective guideline in the given file.
-    For the Rating column, assign a number between 1-5 based on the coverage of the guideline in the given file.
     Also, provide the report in a tabular format against coding guidelines, at the end of each file in the git diff:
-    Example:  Code review checklist	Summarization Rating(1-5)
+    Example:  Code review checklist	Summarization
 SOLID principles
 Java Coding Guidelines:
 Naming Conventions
