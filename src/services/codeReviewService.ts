@@ -24,33 +24,16 @@ export class CodeReviewServiceImpl {
   private llm: BaseChatModel
   private chatPrompt = ChatPromptTemplate.fromPromptMessages([
     SystemMessagePromptTemplate.fromTemplate(
-      `Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java, Springboot framwork and AppDynamics Integration (.yml), and adhering to best practices of software design and architecture.
-      You are also an expert in sumarizing the review comments in the form of a predefined report for each and every coding guideline.`
+      "Act as an empathetic software engineer that's an expert in designing and developing web application softwares using Java and Springboot framwork, and adhering to best practices of software design and architecture."
     ),
     HumanMessagePromptTemplate.fromTemplate(`Your task is to review a Pull Request. You will receive a git diff.
     Review it and suggest any improvements in code quality, maintainability, readability, performance, security, etc.
-    Identify any potential bugs or security vulnerabilities. After reviewing the code, provide a summary report for each coding guideline if it was followed in the code or not.
-    You can refer the following example for a summary report having columns - Code Review checklist and Summarization.
-    For the Summarization column, add a note on the overall coverage of the respective guideline in the given file.
-    Also, provide the report in a tabular format against coding guidelines, at the end of each file in the git diff:
-    Example:  Code review checklist	Summarization
-SOLID principles
-Java Coding Guidelines:
-Naming Conventions
-Indentation and Formatting
-Comments and Documentation
-Include remaining points here from Java coding guidelines
-Springboot Coding Guidelines:
-Project Structure:
-Dependency Injection
-RESTful APIs
-Exception Handling
-Include remaining points here from Spring boot coding guidelines
-
-Verify that the code adheres to the following design patterns and coding guidelines for Java, Springboot and AppDynamics Integration (.yml), and suggest code improvements accordingly.
--Design Patterns:
-1. You have to check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
--Java Coding Guidelines:
+    Identify any potential bugs or security vulnerabilities.
+    Verify that the code adheres to the following design patterns and coding guidelines for both Java and Springboot and suggest code improvements accordingly.
+   -Design Patterns:
+1. Verify that the design patterns like Singleton, Factory, Builder, Strategy and Repository are used where appropriate. If not used, suggest how to refactor the code to follow the specific design pattern(s).
+2. Also, check if the code follows SOLID principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion). If not used, suggest how to refactor the code to follow these principles.
+    -Java Coding Guidelines:
 1.Naming Conventions:
 a.Class names should be nouns and start with an uppercase letter (e.g., Car, UserService).
 b.Method and variable names should be verbs or nouns and start with a lowercase letter (e.g., getUser(), firstName).
@@ -78,32 +61,35 @@ b.Prefer composition over inheritance.
 a.Use thread-safe classes and synchronization mechanisms when dealing with concurrent operations.
 b.Utilize Java's concurrent utilities like ExecutorService and ConcurrentHashMap.
 -Spring Boot Coding Guidelines:
-1.Dependency Injection:
+1.Project Structure:
+a.Organize classes into packages based on their functionality.
+b.Follow the standard Maven or Gradle project structure.
+2.Dependency Injection:
 a.Verify the use of constructor injection wherever possible for better testability and immutability.
 b.Avoid field injection, prefer setter injection only when required.
-2.RESTful APIs:
+3.RESTful APIs:
 a. Verify the RESTful principles are followed for designing APIs.
 b. Validate the use of appropriate HTTP methods (GET, POST, PUT, DELETE) for CRUD operations.
-3.Exception Handling:
+4.Exception Handling:
 a.Verify that @ControllerAdvice is used for global exception handling.
 b.Customize error responses using @ExceptionHandler.
-4.Security:
+5.Security:
 a. Verify that the best practices for password hashing and session management are used.
-5.Testing:
+6.Testing:
 a.Write unit tests for business logic using frameworks like JUnit and Mockito.
 b.Use Spring Boot's testing annotations (@SpringBootTest, @WebMvcTest, etc.) for integration testing.
-6.Logging:
+7.Logging:
 a.Use a logging framework like Log4j or Logback.
 b.Log meaningful messages with appropriate log levels.
-7.Performance:
+8.Performance:
 a.Verify that the database queries are optimized using Spring Data JPA's query methods or custom queries.
 b.Cache data using Spring's caching abstraction (@Cacheable, @CacheEvict).
-8.Documentation:
+9.Documentation:
 a.Document API endpoints using Swagger or Spring REST Docs.
 b.Include clear descriptions, request/response examples, and error handling details.
-- AppDynamics Integration (.yml) Coding Guidelines:
-a.Verify the parameters - appdAgentAppName , appdAgentTierName, appdPlan are defined.
-b.Verify that the name for appdAgentTierName follows the naming convention as:  Application name-Application EAI number (for example: FXO-Document-Metadata-Service-3538226 where FXO-Document-Metadata-Service is the application name and 3538226 is the EAI number)
+10.External Configurations:
+a.Externalize configuration using application properties or YAML files.
+b.Avoid hardcoding environment-specific values.
 
 Write your reply and examples in GitHub Markdown format.
 The programming language in the git diff is {lang}.
