@@ -11,6 +11,9 @@ import { LanguageDetectionService } from './services/languageDetectionService'
 
 import { Effect, Layer, Match, pipe, Exit } from 'effect'
 
+// Imports for Claude
+import { ChatAnthropic } from 'langchain/chat_models/anthropic' // Updated import
+
 config()
 
 export const run = async (): Promise<void> => {
@@ -26,10 +29,17 @@ export const run = async (): Promise<void> => {
   const context = github.context
   const { owner, repo } = context.repo
 
-  const model: BaseChatModel = new ChatOpenAI({
-    temperature,
-    openAIApiKey,
-    modelName
+  // const model: BaseChatModel = new ChatOpenAI({
+  //   temperature,
+  //   openAIApiKey,
+  //   modelName
+  // })
+
+  // Claude model initialization
+  const claudeModelName = 'claude-3-7-sonnet-20250219'
+  const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
+  temperature: temperature,
+  apiKey: openAIApiKey
   })
 
   const MainLive = initializeServices(model, githubToken)
