@@ -36,7 +36,7 @@ export const run = async (): Promise<void> => {
   // })
 
   // Claude model initialization
-  const claudeModelName = 'claude-3-7-sonnet-20250219'
+  const claudeModelName = 'claude-3-5-sonnet-20241022'
   const anthropic_api_key = core.getInput('openai_api_key')
   const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
   temperature: temperature,
