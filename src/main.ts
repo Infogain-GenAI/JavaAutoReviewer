@@ -17,7 +17,7 @@ import { ChatAnthropic } from 'langchain/chat_models/anthropic' // Updated impor
 config()
 
 export const run = async (): Promise<void> => {
-  const openAIApiKey = core.getInput('openai_api_key')
+  //const openAIApiKey = core.getInput('openai_api_key')
   const githubToken = core.getInput('github_token')
   const modelName = core.getInput('model_name')
   const temperature = parseInt(core.getInput('model_temperature'))
@@ -36,10 +36,11 @@ export const run = async (): Promise<void> => {
   // })
 
   // Claude model initialization
-  const claudeModelName = 'claude-3-5-haiku-20241022'
+  const claudeModelName = 'claude-3-7-sonnet-20250219'
+  const anthropic_api_key = core.getInput('openai_api_key')
   const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
   temperature: temperature,
-  apiKey: openAIApiKey
+  apiKey: anthropic_api_key
   })
 
   const MainLive = initializeServices(model, githubToken)
