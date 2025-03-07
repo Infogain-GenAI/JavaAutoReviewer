@@ -26,7 +26,7 @@ export const run = async (): Promise<void> => {
   // const azureOpenAIApiDeploymentName = core.getInput('azure_openai_api_deployment_name')
   // const azureOpenAIApiVersion = core.getInput('azure_openai_api_version')
   const anthropic_api_key = core.getInput('anthropic_api_key')
-  const claudeModelName = 'claude-3-5-sonnet-20241022'
+  const claudeModelName = 'claude-3-7-sonnet-20250219'
   const context = github.context
   const { owner, repo } = context.repo
 
@@ -39,7 +39,8 @@ export const run = async (): Promise<void> => {
   // Claude model initialization
   const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
   temperature: 1.0,
-  apiKey: anthropic_api_key
+  apiKey: anthropic_api_key,
+  anthropicApiKey: anthropic_api_key
   })
 
   const MainLive = initializeServices(model, githubToken)
