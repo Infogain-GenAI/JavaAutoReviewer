@@ -38,7 +38,7 @@ export const run = async (): Promise<void> => {
 
   // Claude model initialization
   const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
-  temperature: 0.8,
+  temperature: 1.0,
   anthropicApiKey: anthropic_api_key
   })
 
