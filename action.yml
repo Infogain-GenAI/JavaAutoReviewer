@@ -11,7 +11,7 @@ inputs:
   openai_api_key:
     description: 'OpenAI API key'
     required: true
-  model_name: 
+  model_name:
     description: 'OpenAI model name'
     default: 'gpt-3.5-turbo'
   model_temperature:
@@ -21,6 +21,9 @@ inputs:
     description: "Provide a wildcard expression to exclude files from code review. For example, `*.md` will exclude all markdown files. Multiple expressions are supported via commas, eg `*.js, *.cjs`"
     required: false
     default: ""
+anthropic_api_key:
+    description: 'Anthropic API key'
+    required: true
 
 runs:
   using: 'node20'
