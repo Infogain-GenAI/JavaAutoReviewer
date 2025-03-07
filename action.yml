@@ -21,7 +21,7 @@ inputs:
     description: "Provide a wildcard expression to exclude files from code review. For example, `*.md` will exclude all markdown files. Multiple expressions are supported via commas, eg `*.js, *.cjs`"
     required: false
     default: ""
-anthropic_api_key:
+  anthropic_api_key:
     description: 'Anthropic API key'
     required: true
 
