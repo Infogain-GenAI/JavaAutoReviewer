@@ -8,11 +8,11 @@ import { BaseChatModel } from 'langchain/dist/chat_models/base'
 import { CodeReviewService, CodeReviewServiceImpl } from './services/codeReviewService'
 import { PullRequestService, PullRequestServiceImpl, octokitTag } from './services/pullRequestService'
 import { LanguageDetectionService } from './services/languageDetectionService'
-
 import { Effect, Layer, Match, pipe, Exit } from 'effect'
 
 // Imports for Claude
-import { ChatAnthropic } from 'langchain/chat_models/anthropic' // Updated import
+// import { ChatAnthropic } from 'langchain/chat_models/anthropic' // Updated import
+// import { foldLeftChunksEffect } from 'effect/Sink'
 
 config()
 
@@ -25,23 +25,23 @@ export const run = async (): Promise<void> => {
   // const azureOpenAIApiInstanceName = core.getInput('azure_openai_api_instance_name')
   // const azureOpenAIApiDeploymentName = core.getInput('azure_openai_api_deployment_name')
   // const azureOpenAIApiVersion = core.getInput('azure_openai_api_version')
-  const anthropic_api_key = core.getInput('anthropic_api_key')
-  const claudeModelName = 'claude-3-7-sonnet-20250219'
+  //const anthropic_api_key = core.getInput('anthropic_api_key')
+  //const claudeModelName = 'claude-3-7-sonnet-20250219'
   const context = github.context
   const { owner, repo } = context.repo
 
-  // const model: BaseChatModel = new ChatOpenAI({
-  //   temperature,
-  //   openAIApiKey,
-  //   modelName
-  // })
-
-  // Claude model initialization
-  const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
-  temperature: 1.0,
-  apiKey: anthropic_api_key,
-  anthropicApiKey: anthropic_api_key
+  const model: BaseChatModel = new ChatOpenAI({
+    temperature,
+    openAIApiKey,
+    modelName
   })
+
+  // // Claude model initialization
+  // const model: BaseChatModel = new ChatAnthropic({ modelName: claudeModelName,
+  // temperature: 0.7,
+  // anthropicApiKey: anthropic_api_key
+  // })
+  // console.log('Model initialized' + model)
 
   const MainLive = initializeServices(model, githubToken)
 
